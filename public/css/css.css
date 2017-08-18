@@ -1,0 +1,265 @@
+.clearfix:after {
+    clear: both;
+    line-height: 0;
+    height: 0;
+    display: table;
+    content: "";
+}
+html, body{
+	margin:0;
+	padding:0;
+}	
+*{
+	box-sizing: border-box;
+	list-style: none;
+	color:black;
+}	
+html{
+	height: 100%;
+}
+body{
+	background-image: url("https://image.freepik.com/free-vector/abstract-background-with-a-3d-pattern_1319-68.jpg");
+	min-height: 100%;
+	position: relative;
+}
+
+/*
+BEGINING OF HEADER
+*/
+	header{
+
+	}
+		.main{
+			display: flex;
+			align-items:initial;
+			margin: 0;
+		}
+			.logo{
+				width: 6.25%;
+				display: inline-block;
+				float: left;
+			}
+				.logo>a>img{
+					width: 100%;
+				}
+			header>.main>.block{
+				display: inline-block;
+				width: 100%;
+				margin-right: 0;
+				margin-left: 0;
+			}
+			.toolbar{
+				display: inline-block;
+				text-align: center;
+				background-color: grey;
+				border-bottom: 0px;
+				border-radius: 0 0 10px 10px;
+
+				width: 100%;
+			}
+				.toolbar>ul{
+					padding: 0;	
+				}
+					.toolbar>ul>li{
+						display: inline-block;
+					}
+						.toolbar>ul>li>ul>li{
+							display: inline-block;
+							color: white;
+							/*font-size: 20px;*/
+							text-align:left;
+						}
+			.contacts{
+				float: left;
+				margin-left: 1%;
+			}
+				.contacts>ul{
+					padding: 0;	
+				}
+					.contacts>ul>li{
+						margin: 0.5rem 1rem;
+						font-size: 16px;
+					}
+						.contacts>ul>li>a{
+							color: white;
+						}
+			.formBar{
+				float: right;	
+				margin-right: 1%;
+			}
+				.formBar>ul>li{
+					margin: 0.5rem 1rem;	
+					font-size: 16px;
+				}
+					.formBar>ul>li>a{
+						color: black;
+					}
+			.searchbar{
+				margin: 1rem 12.5%;
+				font-size: 26px;
+			}
+				.searchbar>input{
+					display: inline-block;
+					width: 88%;
+					border-radius: 10px;
+					
+				}
+				.searchbar>button{
+					display: inline-block;
+					/*border-radius: 25px;*/
+					text-align: center;
+					width: 10%;
+					font-size: 2rem;
+					
+				}
+		.priceSum{
+			display: inline-block;
+			width: 7.5%;
+			
+			}
+				.priceSum>i{
+					font-size: 3rem;
+					
+				}
+				.priceSum>span{
+					font-size: 1.8rem;
+					
+				}
+
+/*
+END OF HEADER
+*/
+
+.leftMenu{
+	margin-top: 1rem;
+	padding: 1rem 0;
+	background-color: grey;
+	width: 12.5%;
+	border-radius: 0 1rem 1rem 0;
+	float: left;
+}
+	.leftMenu>nav{
+		padding: 1rem;
+	}
+	.leftMenu>nav.clickBait{
+		padding-bottom: 1.5rem
+	}
+	.leftMenu>nav.shopMenu{
+		padding-top: 1.5rem
+	}
+		.leftMenu>nav>ul{
+			padding: 0;
+		}
+			.leftMenu>nav>ul>li{
+				margin: 5px;
+				text-align: center;
+				border-radius: 5px;
+			}
+				.leftMenu>nav>ul>.btn-success>a,.leftMenu>nav>ul>.btn-primary>a{
+					color: white;
+				}
+				.leftMenu>nav>ul>li>a{
+					color: black;
+				}
+	.leftMenu>.questionBox{
+		text-align: center;
+
+	}
+		.questionBox>.panel-default{
+			margin: 0 auto;
+			width: 90%;
+		}
+		.questionBox>div>div>textarea{
+			resize:none;
+			width: 100%;
+			color: black;
+			border-radius: 1rem;
+		}
+		.questionBox>div>div>button{
+			width: 100%;
+		}
+.rightAkcijos{
+	float: right;
+	width: 12.5%;
+}
+main>.container{
+	width: 69%;
+}
+.panel-heading{
+	font-size: 110%;
+	font-weight: 700;
+}
+.newestProducts{
+	padding: 2rem 0;
+}
+.item:hover{
+	border: 1px solid;
+}
+.item{
+	padding: 1rem;
+	text-align: center;
+}
+	.item>div{
+		border-radius: 10px;
+	}
+		.item>div>.info1{
+			display: inline-block;
+			font-size: 1.6rem;
+			text-align: left;
+		}
+		.item>div>a>img{
+			width: 90%;
+		}
+		.item>div>.toCart{
+			display: inline-block;
+		}
+			.toCartA>button{
+				border-radius: 50px 0px 50px 50px;
+				font-size: 100%;
+			}
+			.toCart>button{
+				border-radius: 50px 0px 50px 50px;
+				font-size: 150%;
+			}
+.panel-body{
+	position: relative;
+	margin-bottom: 1rem;
+}
+.moreButton{
+	position: absolute;
+	bottom: 0;
+	right: 1rem;
+	padding: 0.5rem 1rem;	
+	border: 1px solid;	
+	border-radius: 1rem;
+}
+.emploeyBlock{
+	display: inline-block;
+	width: 33%;
+	margin-bottom: 5rem;
+}
+.infoCorp{
+	font-family: "Cardo" ;
+	font-weight: 400;
+	font-style: normal;
+	background-color: rgba(255,255,255,0.85);
+	background-size: 100% 1.5em;
+	background-image: -webkit-linear-gradient(#eee .05em, transparent 1px);
+	background-image: -moz-linear-gradient(#eee .05em, transparent 1px);
+	background-image: linear-gradient(#eee .05em, transparent 1px);
+	padding: 1.5em 1.25em;
+    color: #333;
+    /* By default the lines have the height of 1 and a half the height of the font. Here we don’t need specify the unit */
+    line-height: 1.5;
+    border-radius: 10%;
+}
+footer{
+	margin: 0 auto;
+	width: 100%;
+}
+	footer>pre{
+		margin: 0 auto;
+		background-color: grey;
+		color: white;
+		font-size: 10px;
+	}
