@@ -195,10 +195,14 @@ main>.container{
 .item:hover{
 	border: 1px solid;
 }
+.center>.item{
+	padding: 1rem;
+	text-align: center;
+		height: 400px;
+}
 .item{
 	padding: 1rem;
 	text-align: center;
-	height: 400px;
 }
 	.item>div{
 		border-radius: 10px;

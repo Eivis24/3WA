@@ -89,7 +89,7 @@
                                 <div class="panel-heading">
                                     Populiariausios prekes
                                 </div>
-                                    <div class="panel-body">
+                                    <div class="panel-body center">
                                  <!-- for loop begining  -->
                                  
                                 @foreach($items as $item)
