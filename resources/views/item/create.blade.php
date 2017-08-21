@@ -3,18 +3,12 @@
 @section('content')
 <div class="container">
     <div class="row">
-        <hr>
-        <hr>
-                @component('component.indexButton',
-                ['route'=>'dish.index',
-                'indexName'=>'Back to indexes'])
-                @endcomponent
-                <hr>
+
         <div class="col-md-8 col-md-offset-2">
             <div class="panel panel-default">
-                <div class="panel-heading">Dish maker</div>
+                <div class="panel-heading">Item maker</div>
                 <div class="panel-body">
-                    <form class="form-horizontal" method="POST" action="{{ url('admin/dish') }}">
+                    <form class="form-horizontal" method="POST" action="{{ url('item') }}">
                         {{ csrf_field() }}
 
                         <div class="form-group{{ $errors->has('title') ? ' has-error' : '' }}">
@@ -74,10 +68,52 @@
                             </div>
                         </div>
 
+                        <div class="form-group{{ $errors->has('tax') ? ' has-error' : '' }}">
+                            <label for="tax" class="col-md-4 control-label">Tax</label>
+
+                            <div class="col-md-6">
+                                <input id="tax" type="text" class="form-control" name="tax" value="{{ old('tax') }}">
+
+                                @if ($errors->has('tax'))
+                                    <span class="help-block">
+                                        <strong>{{ $errors->first('tax') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
+                        </div>
+
+                        <div class="form-group{{ $errors->has('inStock') ? ' has-error' : '' }}">
+                            <label for="inStock" class="col-md-4 control-label">In Stock</label>
+
+                            <div class="col-md-6">
+                                <input id="inStock" type="text" class="form-control" name="inStock" value="{{ old('inStock') }}">
+
+                                @if ($errors->has('inStock'))
+                                    <span class="help-block">
+                                        <strong>{{ $errors->first('inStock') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
+                        </div>
+
+                        <div class="form-group{{ $errors->has('lastRecieved') ? ' has-error' : '' }}">
+                            <label for="lastRecieved" class="col-md-4 control-label">Last restock</label>
+
+                            <div class="col-md-6">
+                                <input id="lastRecieved" type="text" class="form-control" name="lastRecieved" value="{{ old('lastRecieved') }}">
+
+                                @if ($errors->has('lastRecieved'))
+                                    <span class="help-block">
+                                        <strong>{{ $errors->first('lastRecieved') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
+                        </div>
+
                         <div class="form-group">
                             <div class="col-md-6 col-md-offset-4">
                                 <button type="submit" class="btn btn-primary">
-                                    Add this dish
+                                    Add this item
                                 </button>
                             </div>
                         </div>

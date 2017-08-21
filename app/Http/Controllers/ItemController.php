@@ -37,9 +37,11 @@ class ItemController extends Controller
     public function index()
     {
         $items=Item::all();
-        return view('index', compact('items'));
-    }
 
+        // dd($items);
+
+        return view('item.index', compact('items'));
+    }
     /**
      * Show the form for creating a new resource.
      *
@@ -119,5 +121,9 @@ class ItemController extends Controller
             $item->delete();
         }
         return redirect()->route('item.index');
+    }
+    private static function count()
+    {
+        return Item::all()->count();//paima visus user'ius
     }
 }

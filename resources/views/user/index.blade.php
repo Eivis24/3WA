@@ -1,11 +1,35 @@
 @extends('layouts.app')
 
 @section('content')
-<hr>
-<hr>
-<h2 class="text-center">Number of users ( {{$count}} )</h2>
 <div class="container">
     <div class="row">
+
+<a 
+    href="{{ route('item.index') }}"
+    class="itemButton btn btn-success col-lg-3">
+    Items
+</a>
+<a 
+    href="#"
+    class="itemButton btn btn-primary col-lg-3">
+    Orders
+</a>
+<a 
+    href="#"
+    class="itemButton btn btn-default col-lg-3">
+    Users
+</a>
+<a 
+    href="#"
+    class="itemButton btn btn-danger col-lg-3">
+    Edit my profile
+</a>
+<br>
+{{--
+    *mygtukus paversk atskirais komponentais
+    *visa sita gali paversti js
+    --}}
+
         <table class="table">
             <thead>
                 <tr>
@@ -36,7 +60,7 @@
                     <td>{{$user->country}}</td>
                     <td>{{$user->created_at}}</td>
                     <td>
-                    @component('component.delete',[
+                    @component('components.delete',[
                                     'route'=>'user',
                                     'id'=>$user->id,
                                     'name'=>'Remove user'])

@@ -91,17 +91,23 @@
                                 </div>
                                     <div class="panel-body">
                                  <!-- for loop begining  -->
-                                 {{--
-                                    @foreach($items as $item)
-                                    <div class="item list-group col-lg-3">
+                                 
+                                @foreach($items as $item)
+                                <div class="item list-group col-lg-3">
                                     <div>
                                         <a href="{{route('item.show', $item->id)}}">
-                                            <p class="tittle"><b>Prekės pavadinimas</b></p>
+                                            <p class="tittle"><b>{{$item->title}}</b></p>
                                             <img src="{{$item->imageURL}}" class="productImage">
                                         </a>
                                         <div class="info1">
-                                            <div class="price1">{{$item->price}}+{{$item->tax}}</div>
-                                            <div class="amount">Kiekis sandelyje: {{$item->inStock}}</div>
+                                            <div class="price1">{{$item->price + $item->tax}} €</div>
+                                            <div class="amount">Kiekis sandelyje: 
+                                                @if($item->inStock>10)
+                                                    +10
+                                                @else
+                                                {{$item->inStock}}
+                                                @endif
+                                            </div>
                                         </div>
                                         <div class="toCart">
                                             @component('components.cart',['id'=>$item->id]))
@@ -110,12 +116,12 @@
                                     </div>
                                 </div>
                                 @endforeach
-                                --}}
+                                
                                 <div class="item list-group col-lg-3">
                                     <div>
                                         <a href="#">
                                             <p class="tittle"><b>Prekės pavadinimas</b></p>
-                                            <img src="https://lh3.ggpht.com/MBuMXMJJnlIb-WkqHL__hRUmXy3fDKu3z5cqxH_cB5zJ_ewidu-aMbsX-urlF6LiFg=w300" class="productImage">
+                                            <img src="https://lh3.ggpht.com/MBuMXMJJnlIb-WkqHL__hRUmXy3fDKu3z5cqxH_cB5zJ_ewidu-aMbsX-urlF6LiFg=w500" class="productImage">
                                         </a>
                                         <div class="info1">
                                             <div class="price1">5555,55 €</div>
@@ -134,7 +140,7 @@
                                     <div>
                                         <a href="#">
                                             <p class="tittle"><b>Prekės pavadinimas</b></p>
-                                            <img src="https://lh3.ggpht.com/MBuMXMJJnlIb-WkqHL__hRUmXy3fDKu3z5cqxH_cB5zJ_ewidu-aMbsX-urlF6LiFg=w300" class="productImage">
+                                            <img src="https://lh3.ggpht.com/MBuMXMJJnlIb-WkqHL__hRUmXy3fDKu3z5cqxH_cB5zJ_ewidu-aMbsX-urlF6LiFg=w500" class="productImage">
                                         </a>
                                         <div class="info1">
                                             <div class="price1">5555,55 €</div>
@@ -153,7 +159,7 @@
                                     <div>
                                         <a href="#">
                                             <p class="tittle"><b>Prekės pavadinimas</b></p>
-                                            <img src="https://lh3.ggpht.com/MBuMXMJJnlIb-WkqHL__hRUmXy3fDKu3z5cqxH_cB5zJ_ewidu-aMbsX-urlF6LiFg=w300" class="productImage">
+                                            <img src="https://lh3.ggpht.com/MBuMXMJJnlIb-WkqHL__hRUmXy3fDKu3z5cqxH_cB5zJ_ewidu-aMbsX-urlF6LiFg=w500" class="productImage">
                                         </a>
                                         <div class="info1">
                                             <div class="price1">5555,55 €</div>
@@ -172,7 +178,7 @@
                                     <div>
                                         <a href="#">
                                             <p class="tittle"><b>Prekės pavadinimas</b></p>
-                                            <img src="https://lh3.ggpht.com/MBuMXMJJnlIb-WkqHL__hRUmXy3fDKu3z5cqxH_cB5zJ_ewidu-aMbsX-urlF6LiFg=w300" class="productImage">
+                                            <img src="https://lh3.ggpht.com/MBuMXMJJnlIb-WkqHL__hRUmXy3fDKu3z5cqxH_cB5zJ_ewidu-aMbsX-urlF6LiFg=w500" class="productImage">
                                         </a>
                                         <div class="info1">
                                             <div class="price1">5555,55 €</div>
@@ -191,7 +197,7 @@
                                     <div>
                                         <a href="#">
                                             <p class="tittle"><b>Prekės pavadinimas</b></p>
-                                            <img src="https://lh3.ggpht.com/MBuMXMJJnlIb-WkqHL__hRUmXy3fDKu3z5cqxH_cB5zJ_ewidu-aMbsX-urlF6LiFg=w300" class="productImage">
+                                            <img src="https://lh3.ggpht.com/MBuMXMJJnlIb-WkqHL__hRUmXy3fDKu3z5cqxH_cB5zJ_ewidu-aMbsX-urlF6LiFg=w500" class="productImage">
                                         </a>
                                         <div class="info1">
                                             <div class="price1">5555,55 €</div>
@@ -210,7 +216,7 @@
                                     <div>
                                         <a href="#">
                                             <p class="tittle"><b>Prekės pavadinimas</b></p>
-                                            <img src="https://lh3.ggpht.com/MBuMXMJJnlIb-WkqHL__hRUmXy3fDKu3z5cqxH_cB5zJ_ewidu-aMbsX-urlF6LiFg=w300" class="productImage">
+                                            <img src="https://lh3.ggpht.com/MBuMXMJJnlIb-WkqHL__hRUmXy3fDKu3z5cqxH_cB5zJ_ewidu-aMbsX-urlF6LiFg=w500" class="productImage">
                                         </a>
                                         <div class="info1">
                                             <div class="price1">5555,55 €</div>
@@ -229,7 +235,7 @@
                                     <div>
                                         <a href="#">
                                             <p class="tittle"><b>Prekės pavadinimas</b></p>
-                                            <img src="https://lh3.ggpht.com/MBuMXMJJnlIb-WkqHL__hRUmXy3fDKu3z5cqxH_cB5zJ_ewidu-aMbsX-urlF6LiFg=w300" class="productImage">
+                                            <img src="https://lh3.ggpht.com/MBuMXMJJnlIb-WkqHL__hRUmXy3fDKu3z5cqxH_cB5zJ_ewidu-aMbsX-urlF6LiFg=w500" class="productImage">
                                         </a>
                                         <div class="info1">
                                             <div class="price1">5555,55 €</div>
@@ -248,7 +254,7 @@
                                     <div>
                                         <a href="#">
                                             <p class="tittle"><b>Prekės pavadinimas</b></p>
-                                            <img src="https://lh3.ggpht.com/MBuMXMJJnlIb-WkqHL__hRUmXy3fDKu3z5cqxH_cB5zJ_ewidu-aMbsX-urlF6LiFg=w300" class="productImage">
+                                            <img src="https://lh3.ggpht.com/MBuMXMJJnlIb-WkqHL__hRUmXy3fDKu3z5cqxH_cB5zJ_ewidu-aMbsX-urlF6LiFg=w500" class="productImage">
                                         </a>
                                         <div class="info1">
                                             <div class="price1">5555,55 €</div>
@@ -267,7 +273,7 @@
                                     <div>
                                         <a href="#">
                                             <p class="tittle"><b>Prekės pavadinimas</b></p>
-                                            <img src="https://lh3.ggpht.com/MBuMXMJJnlIb-WkqHL__hRUmXy3fDKu3z5cqxH_cB5zJ_ewidu-aMbsX-urlF6LiFg=w300" class="productImage">
+                                            <img src="https://lh3.ggpht.com/MBuMXMJJnlIb-WkqHL__hRUmXy3fDKu3z5cqxH_cB5zJ_ewidu-aMbsX-urlF6LiFg=w500" class="productImage">
                                         </a>
                                         <div class="info1">
                                             <div class="price1">5555,55 €</div>
@@ -286,7 +292,7 @@
                                     <div>
                                         <a href="#">
                                             <p class="tittle"><b>Prekės pavadinimas</b></p>
-                                            <img src="https://lh3.ggpht.com/MBuMXMJJnlIb-WkqHL__hRUmXy3fDKu3z5cqxH_cB5zJ_ewidu-aMbsX-urlF6LiFg=w300" class="productImage">
+                                            <img src="https://lh3.ggpht.com/MBuMXMJJnlIb-WkqHL__hRUmXy3fDKu3z5cqxH_cB5zJ_ewidu-aMbsX-urlF6LiFg=w500" class="productImage">
                                         </a>
                                         <div class="info1">
                                             <div class="price1">5555,55 €</div>
@@ -305,7 +311,7 @@
                                     <div>
                                         <a href="#">
                                             <p class="tittle"><b>Prekės pavadinimas</b></p>
-                                            <img src="https://lh3.ggpht.com/MBuMXMJJnlIb-WkqHL__hRUmXy3fDKu3z5cqxH_cB5zJ_ewidu-aMbsX-urlF6LiFg=w300" class="productImage">
+                                            <img src="https://lh3.ggpht.com/MBuMXMJJnlIb-WkqHL__hRUmXy3fDKu3z5cqxH_cB5zJ_ewidu-aMbsX-urlF6LiFg=w500" class="productImage">
                                         </a>
                                         <div class="info1">
                                             <div class="price1">5555,55 €</div>
@@ -325,7 +331,7 @@
                                     <div>
                                         <a href="#">
                                             <p class="tittle"><b>Prekės pavadinimas</b></p>
-                                            <img src="https://lh3.ggpht.com/MBuMXMJJnlIb-WkqHL__hRUmXy3fDKu3z5cqxH_cB5zJ_ewidu-aMbsX-urlF6LiFg=w300" class="productImage">
+                                            <img src="https://lh3.ggpht.com/MBuMXMJJnlIb-WkqHL__hRUmXy3fDKu3z5cqxH_cB5zJ_ewidu-aMbsX-urlF6LiFg=w500" class="productImage">
                                         </a>
                                         <div class="info1">
                                             <div class="price1">5555,55 €</div>
@@ -344,7 +350,7 @@
                                     <div>
                                         <a href="#">
                                             <p class="tittle"><b>Prekės pavadinimas</b></p>
-                                            <img src="https://lh3.ggpht.com/MBuMXMJJnlIb-WkqHL__hRUmXy3fDKu3z5cqxH_cB5zJ_ewidu-aMbsX-urlF6LiFg=w300" class="productImage">
+                                            <img src="https://lh3.ggpht.com/MBuMXMJJnlIb-WkqHL__hRUmXy3fDKu3z5cqxH_cB5zJ_ewidu-aMbsX-urlF6LiFg=w500" class="productImage">
                                         </a>
                                         <div class="info1">
                                             <div class="price1">5555,55 €</div>
@@ -363,7 +369,7 @@
                                     <div>
                                         <a href="#">
                                             <p class="tittle"><b>Prekės pavadinimas</b></p>
-                                            <img src="https://lh3.ggpht.com/MBuMXMJJnlIb-WkqHL__hRUmXy3fDKu3z5cqxH_cB5zJ_ewidu-aMbsX-urlF6LiFg=w300" class="productImage">
+                                            <img src="https://lh3.ggpht.com/MBuMXMJJnlIb-WkqHL__hRUmXy3fDKu3z5cqxH_cB5zJ_ewidu-aMbsX-urlF6LiFg=w500" class="productImage">
                                         </a>
                                         <div class="info1">
                                             <div class="price1">5555,55 €</div>
@@ -382,7 +388,7 @@
                                     <div>
                                         <a href="#">
                                             <p class="tittle"><b>Prekės pavadinimas</b></p>
-                                            <img src="https://lh3.ggpht.com/MBuMXMJJnlIb-WkqHL__hRUmXy3fDKu3z5cqxH_cB5zJ_ewidu-aMbsX-urlF6LiFg=w300" class="productImage">
+                                            <img src="https://lh3.ggpht.com/MBuMXMJJnlIb-WkqHL__hRUmXy3fDKu3z5cqxH_cB5zJ_ewidu-aMbsX-urlF6LiFg=w500" class="productImage">
                                         </a>
                                         <div class="info1">
                                             <div class="price1">5555,55 €</div>
@@ -419,7 +425,7 @@
                                     <div>
                                         <a href="#">
                                             <p class="tittle"><b>Prekės pavadinimas</b></p>
-                                            <img src="https://lh3.ggpht.com/MBuMXMJJnlIb-WkqHL__hRUmXy3fDKu3z5cqxH_cB5zJ_ewidu-aMbsX-urlF6LiFg=w300" class="productImage">
+                                            <img src="https://lh3.ggpht.com/MBuMXMJJnlIb-WkqHL__hRUmXy3fDKu3z5cqxH_cB5zJ_ewidu-aMbsX-urlF6LiFg=w500" class="productImage">
                                         </a>
                                         <div class="info1">
                                             <div class="price1">5555,55 €</div>
@@ -438,7 +444,7 @@
                                     <div>
                                         <a href="#">
                                             <p class="tittle"><b>Prekės pavadinimas</b></p>
-                                            <img src="https://lh3.ggpht.com/MBuMXMJJnlIb-WkqHL__hRUmXy3fDKu3z5cqxH_cB5zJ_ewidu-aMbsX-urlF6LiFg=w300" class="productImage">
+                                            <img src="https://lh3.ggpht.com/MBuMXMJJnlIb-WkqHL__hRUmXy3fDKu3z5cqxH_cB5zJ_ewidu-aMbsX-urlF6LiFg=w500" class="productImage">
                                         </a>
                                         <div class="info1">
                                             <div class="price1">5555,55 €</div>
@@ -457,7 +463,7 @@
                                     <div>
                                         <a href="#">
                                             <p class="tittle"><b>Prekės pavadinimas</b></p>
-                                            <img src="https://lh3.ggpht.com/MBuMXMJJnlIb-WkqHL__hRUmXy3fDKu3z5cqxH_cB5zJ_ewidu-aMbsX-urlF6LiFg=w300" class="productImage">
+                                            <img src="https://lh3.ggpht.com/MBuMXMJJnlIb-WkqHL__hRUmXy3fDKu3z5cqxH_cB5zJ_ewidu-aMbsX-urlF6LiFg=w500" class="productImage">
                                         </a>
                                         <div class="info1">
                                             <div class="price1">5555,55 €</div>
@@ -476,7 +482,7 @@
                                     <div>
                                         <a href="#">
                                             <p class="tittle"><b>Prekės pavadinimas</b></p>
-                                            <img src="https://lh3.ggpht.com/MBuMXMJJnlIb-WkqHL__hRUmXy3fDKu3z5cqxH_cB5zJ_ewidu-aMbsX-urlF6LiFg=w300" class="productImage">
+                                            <img src="https://lh3.ggpht.com/MBuMXMJJnlIb-WkqHL__hRUmXy3fDKu3z5cqxH_cB5zJ_ewidu-aMbsX-urlF6LiFg=w500" class="productImage">
                                         </a>
                                         <div class="info1">
                                             <div class="price1">5555,55 €</div>
@@ -495,7 +501,7 @@
                                     <div>
                                         <a href="#">
                                             <p class="tittle"><b>Prekės pavadinimas</b></p>
-                                            <img src="https://lh3.ggpht.com/MBuMXMJJnlIb-WkqHL__hRUmXy3fDKu3z5cqxH_cB5zJ_ewidu-aMbsX-urlF6LiFg=w300" class="productImage">
+                                            <img src="https://lh3.ggpht.com/MBuMXMJJnlIb-WkqHL__hRUmXy3fDKu3z5cqxH_cB5zJ_ewidu-aMbsX-urlF6LiFg=w500" class="productImage">
                                         </a>
                                         <div class="info1">
                                             <div class="price1">5555,55 €</div>
@@ -514,7 +520,7 @@
                                     <div>
                                         <a href="#">
                                             <p class="tittle"><b>Prekės pavadinimas</b></p>
-                                            <img src="https://lh3.ggpht.com/MBuMXMJJnlIb-WkqHL__hRUmXy3fDKu3z5cqxH_cB5zJ_ewidu-aMbsX-urlF6LiFg=w300" class="productImage">
+                                            <img src="https://lh3.ggpht.com/MBuMXMJJnlIb-WkqHL__hRUmXy3fDKu3z5cqxH_cB5zJ_ewidu-aMbsX-urlF6LiFg=w500" class="productImage">
                                         </a>
                                         <div class="info1">
                                             <div class="price1">5555,55 €</div>
@@ -533,7 +539,7 @@
                                     <div>
                                         <a href="#">
                                             <p class="tittle"><b>Prekės pavadinimas</b></p>
-                                            <img src="https://lh3.ggpht.com/MBuMXMJJnlIb-WkqHL__hRUmXy3fDKu3z5cqxH_cB5zJ_ewidu-aMbsX-urlF6LiFg=w300" class="productImage">
+                                            <img src="https://lh3.ggpht.com/MBuMXMJJnlIb-WkqHL__hRUmXy3fDKu3z5cqxH_cB5zJ_ewidu-aMbsX-urlF6LiFg=w500" class="productImage">
                                         </a>
                                         <div class="info1">
                                             <div class="price1">5555,55 €</div>
@@ -552,7 +558,7 @@
                                     <div>
                                         <a href="#">
                                             <p class="tittle"><b>Prekės pavadinimas</b></p>
-                                            <img src="https://lh3.ggpht.com/MBuMXMJJnlIb-WkqHL__hRUmXy3fDKu3z5cqxH_cB5zJ_ewidu-aMbsX-urlF6LiFg=w300" class="productImage">
+                                            <img src="https://lh3.ggpht.com/MBuMXMJJnlIb-WkqHL__hRUmXy3fDKu3z5cqxH_cB5zJ_ewidu-aMbsX-urlF6LiFg=w500" class="productImage">
                                         </a>
                                         <div class="info1">
                                             <div class="price1">5555,55 €</div>
@@ -571,7 +577,7 @@
                                     <div>
                                         <a href="#">
                                             <p class="tittle"><b>Prekės pavadinimas</b></p>
-                                            <img src="https://lh3.ggpht.com/MBuMXMJJnlIb-WkqHL__hRUmXy3fDKu3z5cqxH_cB5zJ_ewidu-aMbsX-urlF6LiFg=w300" class="productImage">
+                                            <img src="https://lh3.ggpht.com/MBuMXMJJnlIb-WkqHL__hRUmXy3fDKu3z5cqxH_cB5zJ_ewidu-aMbsX-urlF6LiFg=w500" class="productImage">
                                         </a>
                                         <div class="info1">
                                             <div class="price1">5555,55 €</div>
@@ -590,7 +596,7 @@
                                     <div>
                                         <a href="#">
                                             <p class="tittle"><b>Prekės pavadinimas</b></p>
-                                            <img src="https://lh3.ggpht.com/MBuMXMJJnlIb-WkqHL__hRUmXy3fDKu3z5cqxH_cB5zJ_ewidu-aMbsX-urlF6LiFg=w300" class="productImage">
+                                            <img src="https://lh3.ggpht.com/MBuMXMJJnlIb-WkqHL__hRUmXy3fDKu3z5cqxH_cB5zJ_ewidu-aMbsX-urlF6LiFg=w500" class="productImage">
                                         </a>
                                         <div class="info1">
                                             <div class="price1">5555,55 €</div>
@@ -609,7 +615,7 @@
                                     <div>
                                         <a href="#">
                                             <p class="tittle"><b>Prekės pavadinimas</b></p>
-                                            <img src="https://lh3.ggpht.com/MBuMXMJJnlIb-WkqHL__hRUmXy3fDKu3z5cqxH_cB5zJ_ewidu-aMbsX-urlF6LiFg=w300" class="productImage">
+                                            <img src="https://lh3.ggpht.com/MBuMXMJJnlIb-WkqHL__hRUmXy3fDKu3z5cqxH_cB5zJ_ewidu-aMbsX-urlF6LiFg=w500" class="productImage">
                                         </a>
                                         <div class="info1">
                                             <div class="price1">5555,55 €</div>
@@ -628,7 +634,7 @@
                                     <div>
                                         <a href="#">
                                             <p class="tittle"><b>Prekės pavadinimas</b></p>
-                                            <img src="https://lh3.ggpht.com/MBuMXMJJnlIb-WkqHL__hRUmXy3fDKu3z5cqxH_cB5zJ_ewidu-aMbsX-urlF6LiFg=w300" class="productImage">
+                                            <img src="https://lh3.ggpht.com/MBuMXMJJnlIb-WkqHL__hRUmXy3fDKu3z5cqxH_cB5zJ_ewidu-aMbsX-urlF6LiFg=w500" class="productImage">
                                         </a>
                                         <div class="info1">
                                             <div class="price1">5555,55 €</div>
@@ -648,7 +654,7 @@
                                     <div>
                                         <a href="#">
                                             <p class="tittle"><b>Prekės pavadinimas</b></p>
-                                            <img src="https://lh3.ggpht.com/MBuMXMJJnlIb-WkqHL__hRUmXy3fDKu3z5cqxH_cB5zJ_ewidu-aMbsX-urlF6LiFg=w300" class="productImage">
+                                            <img src="https://lh3.ggpht.com/MBuMXMJJnlIb-WkqHL__hRUmXy3fDKu3z5cqxH_cB5zJ_ewidu-aMbsX-urlF6LiFg=w500" class="productImage">
                                         </a>
                                         <div class="info1">
                                             <div class="price1">5555,55 €</div>
@@ -667,7 +673,7 @@
                                     <div>
                                         <a href="#">
                                             <p class="tittle"><b>Prekės pavadinimas</b></p>
-                                            <img src="https://lh3.ggpht.com/MBuMXMJJnlIb-WkqHL__hRUmXy3fDKu3z5cqxH_cB5zJ_ewidu-aMbsX-urlF6LiFg=w300" class="productImage">
+                                            <img src="https://lh3.ggpht.com/MBuMXMJJnlIb-WkqHL__hRUmXy3fDKu3z5cqxH_cB5zJ_ewidu-aMbsX-urlF6LiFg=w500" class="productImage">
                                         </a>
                                         <div class="info1">
                                             <div class="price1">5555,55 €</div>
@@ -686,7 +692,7 @@
                                     <div>
                                         <a href="#">
                                             <p class="tittle"><b>Prekės pavadinimas</b></p>
-                                            <img src="https://lh3.ggpht.com/MBuMXMJJnlIb-WkqHL__hRUmXy3fDKu3z5cqxH_cB5zJ_ewidu-aMbsX-urlF6LiFg=w300" class="productImage">
+                                            <img src="https://lh3.ggpht.com/MBuMXMJJnlIb-WkqHL__hRUmXy3fDKu3z5cqxH_cB5zJ_ewidu-aMbsX-urlF6LiFg=w500" class="productImage">
                                         </a>
                                         <div class="info1">
                                             <div class="price1">5555,55 €</div>
@@ -705,7 +711,7 @@
                                     <div>
                                         <a href="#">
                                             <p class="tittle"><b>Prekės pavadinimas</b></p>
-                                            <img src="https://lh3.ggpht.com/MBuMXMJJnlIb-WkqHL__hRUmXy3fDKu3z5cqxH_cB5zJ_ewidu-aMbsX-urlF6LiFg=w300" class="productImage">
+                                            <img src="https://lh3.ggpht.com/MBuMXMJJnlIb-WkqHL__hRUmXy3fDKu3z5cqxH_cB5zJ_ewidu-aMbsX-urlF6LiFg=w500" class="productImage">
                                         </a>
                                         <div class="info1">
                                             <div class="price1">5555,55 €</div>

@@ -1,5 +1,5 @@
 @if(Auth::user())
-	@if(Auth::user()->roles=='admin')
+	@if(Auth::user()->role=='admin')
 		<form method="POST" action="{{route($route.'.destroy', $id)}}">
 		    {{method_field('DELETE')}}
 		    {{ csrf_field() }}

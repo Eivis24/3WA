@@ -8,18 +8,19 @@
 
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
-    <title>{{ config('app.name', 'Pradinis') }}</title>
+    <title>Parduotuve</title>
+    {{--<title>{{ config('app.name', 'Pradinis') }}</title>--}}
     <!-- Styles -->
     
-    <link rel="stylesheet" href="css/app.css">
-    <link rel="stylesheet" href="css/css.css">
+    <link rel="stylesheet" href="{{ asset('css/app.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/css.css') }}">
 </head>
 <body>
     <header>
             <div class="main">
                 <div class="logo">
                     <a href="{{ url('/') }}">
-                        <img src="arch.png">
+                        <img src="{{ asset('arch.png') }}">
                     </a>
                 </div>
 
@@ -44,7 +45,7 @@
                                     <ul>
                                         @if (Auth::check())
                                         <li>
-                                            <a href="{{ url('/home') }}">
+                                            <a href="{{ url('/user') }}">
                                                 Profile
                                             </a>
                                         </li>
