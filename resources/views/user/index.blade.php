@@ -10,17 +10,18 @@
     Items
 </a>
 <a 
-    href="#"
+    href="{{ route('order.index') }}"
     class="itemButton btn btn-primary col-lg-3">
     Orders
 </a>
 <a 
-    href="#"
+    href="{{ route('user.index') }}"
     class="itemButton btn btn-default col-lg-3">
     Users
 </a>
 <a 
-    href="#"
+    href="{{ route('user.edit') }}"
+    //i need to send the user id
     class="itemButton btn btn-danger col-lg-3">
     Edit my profile
 </a>
