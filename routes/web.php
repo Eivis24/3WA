@@ -20,10 +20,10 @@ Auth::routes();
 Route::get('/', 'HomeController@index')->name('home');
 Route::get('/contacts', 'ContactsController@index')->name('contacts');
 Route::get('/about', 'AboutController@index')->name('about');
-Route::get('/itemReclaim', 'itemReclaimController@index')->name('itemReclaim');
 Route::resource('/item', 'ItemController');
+Route::get('/itemReclaim', 'itemReclaimController@index')->name('itemReclaim');
 Route::resource('/user', 'UserController');
-
+Route::resource('/order', 'OrderController', ['only' => ['index', 'store', 'destroy']]);
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');

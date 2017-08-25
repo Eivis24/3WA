@@ -9,26 +9,29 @@
     class="itemButton btn btn-success col-lg-3">
     Items
 </a>
+
 <a 
     href="{{ route('order.index') }}"
     class="itemButton btn btn-primary col-lg-3">
     Orders
 </a>
+
 <a 
-    href="{{ route('user.index') }}"
+    href="{{ route('user.index') }}"
     class="itemButton btn btn-default col-lg-3">
     Users
 </a>
+
 <a 
-    href="{{ route('user.edit') }}"
-    //i need to send the user id
+    href="{{route('user.edit', $user->id)}}"
     class="itemButton btn btn-danger col-lg-3">
     Edit my profile
 </a>
+
 <br>
+
 {{--
     *mygtukus paversk atskirais komponentais
-    *visa sita gali paversti js
     --}}
 
         <table class="table">
