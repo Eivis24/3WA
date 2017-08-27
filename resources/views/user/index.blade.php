@@ -23,7 +23,7 @@
 </a>
 
 <a 
-    href="{{route('user.edit', $user->id)}}"
+    href="#"
     class="itemButton btn btn-danger col-lg-3">
     Edit my profile
 </a>
