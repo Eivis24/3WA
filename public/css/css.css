@@ -22,6 +22,9 @@ body{
 	min-height: 100%;
 	position: relative;
 }
+textarea:focus, input:focus{
+    outline: none;
+}
 
 /*
 BEGINING OF HEADER
@@ -102,6 +105,7 @@ BEGINING OF HEADER
 					display: inline-block;
 					width: 88%;
 					border-radius: 10px;
+					padding-left: 1rem;
 					
 				}
 				.searchbar>button{
@@ -174,6 +178,7 @@ END OF HEADER
 			width: 100%;
 			color: black;
 			border-radius: 1rem;
+			padding-left: 0.5rem;
 		}
 		.questionBox>div>div>button{
 			width: 100%;
@@ -248,8 +253,12 @@ main>.container{
 	bottom: 0;
 	right: 1rem;
 	padding: 0.5rem 1rem;	
-	border: 1px solid;	
+	border: 1px solid grey;	
 	border-radius: 1rem;
+	background-color: #3097D1;
+}
+.moreButton a{
+	color: white;
 }
 .emploeyBlock{
 	display: inline-block;
